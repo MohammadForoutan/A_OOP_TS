@@ -4,20 +4,28 @@
 */
 
 class Student {
-  private id: string;
-  private fname: string;
-  private lname: string;
+  private id: string = "";
+  private fname: string = "";
+  private lname: string = "";
 
   takeCourse(courseId: number) {
     // take course
   }
+
+  greeting() {
+    return "HI, I am a Student";
+  }
 }
 
 class MSCStudent extends Student {
-  private instructor: string;
+  private instructor: string = "";
 
   getThesisFunding() {
     // ...
+  }
+
+  override greeting() {
+    return "HI, I am a MSCStudent";
   }
 }
 
@@ -41,3 +49,9 @@ const restaurant1 = new Restaurant();
 
 // aliMSCStudent is instance of MSCStudent but he also a Student
 restaurant1.serve(aliMSCStudent);
+
+const s1: Student = new MSCStudent();
+const s2: Student = new Student();
+
+s1.greeting(); // HI, I am a MSCStudent
+s2.greeting(); // HI, I am a Student
