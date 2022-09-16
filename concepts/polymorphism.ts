@@ -3,36 +3,41 @@
     It help us in cutting down the need to duplicate code
 */
 
-// class Person
-class Person {
-  public name: string;
-  public role: string;
+class Student {
+  private id: string;
+  private fname: string;
+  private lname: string;
 
-  getName(): string {
-    return this.name;
-  }
-
-  public getInfo() {
-    return `User name: ${this.name} Role: ${this.role}`;
+  takeCourse(courseId: number) {
+    // take course
   }
 }
 
-class basketballPlayer extends Person {
-  public name: string;
-  super(name: string) {
-    this.role = "BasketBall Player";
-    this.name = name;
+class MSCStudent extends Student {
+  private instructor: string;
+
+  getThesisFunding() {
+    // ...
   }
 }
 
-class golfPlayer extends Person {
-  super(name: string) {
-    this.role = "Golf Player";
-    this.name = name;
+/*
+  somehow we are using inheritance benefits in polymorphism
+*/
+
+// in this context ali is a MSCStudent
+let aliMSCStudent: MSCStudent = new MSCStudent();
+
+// in this context ali is a Student
+let aliStudent: Student = aliMSCStudent;
+
+class Restaurant {
+  serve(student: Student) {
+    //...
   }
 }
 
-const person1 = new basketballPlayer();
-const person2 = new golfPlayer();
+const restaurant1 = new Restaurant();
 
-person2.getName();
+// aliMSCStudent is instance of MSCStudent but he also a Student
+restaurant1.serve(aliMSCStudent);
