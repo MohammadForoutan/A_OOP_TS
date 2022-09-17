@@ -2,7 +2,7 @@
 
 /*
     Control visibility
-    - Public [ accessible from instances and within Class - default all properties & methods are public ]
+    - Public [ accessible from instances and within Class - default all properties & methods are public in typescript(in compiled languages it's depands on compiler and interpreted language depands on interpreter) ]  
     - Private [ only accessible within its class ]
     - Protected [ only accessible within its Class and subclasses]
     - Static [ only accessible through Class without creating a new instance]
